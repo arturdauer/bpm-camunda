@@ -1,0 +1,22 @@
+# Ignore IntelliJ Metadata
+*.iml
+.idea/
+
+# Ignore Eclipse Metadata
+.classpath
+.metadata
+.project
+.recommenders
+.settings
+
+# vscode
+bin
+
+# Ignore gradle specific files
+.gradle
+/build/
+/out
+jar-buildscripts/
+
+*user.gradle
+*developer.gradle
