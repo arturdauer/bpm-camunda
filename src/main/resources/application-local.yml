@@ -1,6 +1,11 @@
 spring:
-  server:
-    port: 8081
+  application:
+    name: app-bpm
+  datasource:
+    hikari:
+      idle-timeout: 30000
+      maximum-pool-size: 5
+      minimum-idle: 1
 
 camunda:
   bpm:
