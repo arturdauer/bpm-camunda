@@ -1,0 +1,25 @@
+spring:
+  server:
+    port: 8081
+
+camunda:
+  bpm:
+    history-level: FULL
+    filter:
+      create: show all
+    admin-user:
+      id: demo
+      password: demo
+      firstName: Demo
+    default-serialization-format: application/json
+    database:
+      schema-update: create-drop
+    job-execution:
+      core-pool-size: 10
+      deployment-aware: true
+      max-jobs-per-acquisition: 3
+      max-pool-size: 10
+      queue-capacity: 3
+    generic-properties:
+      properties:
+        enable-exceptions-after-unhandled-bpmn-error: true
