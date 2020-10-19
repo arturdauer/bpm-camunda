@@ -7,6 +7,9 @@ spring:
       maximum-pool-size: 5
       minimum-idle: 1
 
+server:
+  port : 8082
+
 camunda:
   bpm:
     history-level: FULL
@@ -28,3 +31,25 @@ camunda:
     generic-properties:
       properties:
         enable-exceptions-after-unhandled-bpmn-error: true
+
+incomingService:
+  soapCallUrl: /services/accounts
+
+service:
+  account:
+    endpoint: /ws-endpoint
+    user: user
+    password: pswd
+  maaendern:
+    endpoint: http://localhost:8081/maaendern
+    user: user
+    password: pswd
+
+logging:
+  level:
+    de.hello: DEBUG
+    org.springframework.web.servlet.DispatcherServlet: DEBUG
+  de:
+    request:
+      in: true
+      excludeUrls: /pingpong

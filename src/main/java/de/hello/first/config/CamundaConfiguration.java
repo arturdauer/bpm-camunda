@@ -1,4 +1,4 @@
-package hello.v1.config;
+package de.hello.first.config;
 
 import org.camunda.bpm.engine.RepositoryService;
 import org.camunda.bpm.engine.repository.ProcessDefinition;

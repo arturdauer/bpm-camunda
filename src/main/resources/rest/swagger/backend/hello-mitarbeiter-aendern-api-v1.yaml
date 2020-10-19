@@ -1,0 +1,82 @@
+swagger: "2.0"
+info:
+  description: "Helllo Prozess"
+  version: "1.0.0"
+  title: "Spring Cloud"
+  contact:
+    email: "apiteam@swagger.io"
+host: localhost:8080
+basePath: "/hello/v1"
+schemes:
+  - "https"
+  - "http"
+tags:
+  - name: "mitarbeiter"
+    description: "Services für Mitarbeiter"
+paths:
+  '/mitarbeiter/idAendern':
+    post:
+      description: ""
+      tags:
+        - mitarbeiter
+      produces:
+        - "application/json"
+      parameters:
+        - $ref: '#/parameters/CorrelationId'
+        - name: mitarbeiter
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Mitarbeiter'
+      responses:
+        "202":
+          description: "Auftrag angenommen"
+        "400":
+          description: "Fehlerhafter Auftrag"
+        "500":
+          description: "Internal ServerError"
+definitions:
+  Mitarbeiter:
+    type: object
+    description: Allgemeine Daten
+    required:
+      - id
+      - person
+    properties:
+      id:
+        type: integer
+        format: int64
+        example: 333
+      person:
+        $ref: '#/definitions/Benutzer'
+      funktoin:
+        $ref: '#/definitions/Funktion'
+
+  Benutzer:
+    type: object
+    description: Persone Daten
+    required:
+      - nachname
+    properties:
+      vorname:
+        type: string
+        example: "Max"
+      nachname:
+        type: string
+        example: "Musterman"
+
+  Funktion:
+    type: string
+    enum:
+      - NEU
+      - ANLEGEN
+      - DELETE
+
+parameters:
+
+  CorrelationId:
+    name: x-cor-id
+    description: Cor Id der Aufträge
+    in: header
+    required: false
+    type: string

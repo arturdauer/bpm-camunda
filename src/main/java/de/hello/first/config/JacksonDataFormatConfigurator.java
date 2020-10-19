@@ -1,4 +1,4 @@
-package hello.v1.config;
+package de.hello.first.config;
 
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;

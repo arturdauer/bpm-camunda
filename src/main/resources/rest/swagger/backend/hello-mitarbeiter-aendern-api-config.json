@@ -1,0 +1,9 @@
+{
+  "library":  "spring-boot",
+  "useBeanValidation": true,
+  "performBeanValidation": true,
+  "dateLibrary": "java8-localdatetime",
+  "java8": false,
+  "java11": true,
+  "modelPackage": "de.hello.first.v1.mitarbeiteraendern.model"
+}
