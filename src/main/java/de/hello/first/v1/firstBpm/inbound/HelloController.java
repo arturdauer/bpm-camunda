@@ -17,7 +17,7 @@ public class HelloController {
     }
 
     @PostMapping("/hallo")
-    public ResponseEntity<String> starteHelloProzess(@RequestBody String anfrage) {
+    public ResponseEntity<String> starteHelloProzess(@RequestBody de.hello.first.v1.mitarbeiteraendern.model.Mitarbeiter anfrage) {
         ProcessInstance processInstance = prozessStarter.starteProzessHallo(anfrage, "12345");
         return ResponseEntity.ok(processInstance.getRootProcessInstanceId());
     }

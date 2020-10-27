@@ -18,7 +18,7 @@ public class ProzessStarter {
         this.runtimeService = runtimeService;
     }
 
-    public ProcessInstance starteProzessHallo(String anfrage, String businessKey) {
+    public ProcessInstance starteProzessHallo(de.hello.first.v1.mitarbeiteraendern.model.Mitarbeiter anfrage, String businessKey) {
         Map<String, Object> nutzdaten = new HashMap<>();
         nutzdaten.put(ANFRAGE, anfrage);
         return runtimeService.startProcessInstanceByKey(PROZESS_IS, businessKey, nutzdaten);

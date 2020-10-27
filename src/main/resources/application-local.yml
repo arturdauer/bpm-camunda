@@ -41,7 +41,11 @@ service:
     user: user
     password: pswd
   maaendern:
-    endpoint: http://localhost:8081/maaendern
+    endpoint: http://localhost:8089/maaendern
+    user: user
+    password: pswd
+  vsnraendern:
+    endpoint: http://localhost:8089/ma/{vsnr}
     user: user
     password: pswd
 
@@ -52,4 +56,5 @@ logging:
   de:
     request:
       in: true
+      out: true
       excludeUrls: /pingpong
